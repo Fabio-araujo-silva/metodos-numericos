@@ -65,7 +65,6 @@ valores_definidos = [07,08,04,07,03,08,06,10,05,05
 08,07,10,10,08,06,09,01,09,09
 07,02,10,07,06,03,09,03,07,02];
 
-% Bem como 400 vértices 
 indices = [1716,0417,2069,1016,4577,1192,4650,2488,3411,6210
 1636,7160,0823,1942,2810,4201,7096,5842,5160,2321
 5703,4110,1167,2510,6667,3674,6917,7702,1387,4363
@@ -151,10 +150,10 @@ A_mod = L + p;
 
 tic;
 
-G = chol_decomp(full(A_mod));       % Decomposição de Cholesky
-y = G \ Lado_direito;                % Substituição direta (G * y = b)
-x = G' \ y;                          % Substituição reversa (G' * x = y)
+G = chol_decomp(full(A_mod));        % Decomposição de Cholesky
 
+y = sub_progressiva(G, Lado_direito);  % Resolve G * y = b
+x = sub_regressiva(G', y);             % Resolve G' * x = y
 
 tempo_total = toc;
 
