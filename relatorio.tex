@@ -1,0 +1,106 @@
+\documentclass{article} % change to article if necessary 
+\usepackage[brazilian]{babel}
+\usepackage{graphicx, txfonts} % Required for inserting images
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm} \usepackage{mathtools} \usepackage{lmodern} \usepackage{tikz}
+\usepackage{cancel}
+\usepackage[shortlabels]{enumitem}
+\newcommand\myalign[1]{\centerline{$\displaystyle#1$}}
+\usepackage{tcolorbox} \tcbuselibrary{theorems}
+\newcommand{\heart}
+{\ensuremath\heartsuit}
+\newcommand{\mdc}{\mathrm{mdc}}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\gr}{Gr}
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\filledheart}{\ensuremath\varheartsuit}
+
+\title{Relatório – Solução de Sistemas Lineares Aplicados a Grafos de Manhattan}
+\author{Vinícius Girão de Castro}
+\date{}
+
+\pdfsuppresswarningpagegroup=1
+
+%\newtheorem{theorem}{Teorema}[section]
+%\newtheorem{prop}{Proposição}[theorem]
+\newtheorem{definition}{Definição}[section]
+\newtheorem{exer}{}[section]
+\newtheorem{prop}{Proposição}[section]
+\newtheorem{cor}{Corolário}[prop]
+\newtheorem{exemplo}{Exemplo}[section]
+\newtheorem{resultado}{Resultado}[section]
+\newtcbtheorem[number within=section]{theorem}{Teorema}%
+{colback=red!5,colframe=red!35!black,fonttitle=\bfseries}{th}
+\newtcbtheorem[number within=section]{propp}{Proposição}%
+{colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{pr}
+\newtcbtheorem[number within=section]{lema}{Lema}%
+{colback=yellow!5,colframe=yellow!35!black,fonttitle=\bfseries}{lm}
+
+\theoremstyle{definition}
+\newenvironment{dem}{\paragraph{\textit{Dem.:}}}{\hfill$\square$}
+
+\begin{document}
+\maketitle
+    \section*{Objetivo}
+        Este trabalho tem como objetivo resolver um sistema linear oriundo de um grafo de ruas da 
+        ilha de Manhattan, utilizando diferentes métodos numéricos: LU, Cholesky,
+        Jacobi, Gauss-Seidel e Gradientes Conjugados; e comparar o desempenho de cada um.
+    \section*{Descrição do problema}
+        Utilizando os arquivos manh.el (arestas) e manh.xy (coordenadas dos vértices),
+        foi construído um grafo representando o sistema de ruas de Manhattan.
+        As etapas seguidas foram:
+        \begin{itemize}
+            \item Seleção da maior componente conexa do grafo;
+            \item escolha de $k$ vértices aleatórios $v_{i1}, v_{i2}, \ldots, v_{ik}$ e atribuição
+                de valores $c_{i1}, c_{i2}, \ldots, c_{ik} \in (0, 10];$
+            \item construção da matriz Laplaciana $L$ do grafo;
+            \item Construção da matriz de penalidades  $P = \left(P_{ij}\right) $, onde  
+                $$P_{ij} =
+                \begin{cases}
+                    \alpha = 1.0e7, \text{ se $j$ é um índice de um vértice escolhido} \\
+                    0, \text{ caso contrário;}
+                \end{cases}$$
+            \item construção do vetor $b = \left( b_j \right)$, onde
+                $$b_j= 
+                \begin{cases}
+                    c_{i_s}, \text{ se } $j=i_s$ \\
+                    0, \text{ caso contrário;}
+                \end{cases}$$
+            \item resolução do sistema $\left(L+P \right)x=Pb$.
+         \end{itemize}
+    \section*{Métodos utilizados}
+        \subsection{Decomposição LU}
+            \begin{itemize}
+                \item A matriz $A = L + P$ foi decomposta em  $A = LU$;
+                \item Resolvido em duas etapas:
+                    \begin{itemize}[a)]
+                        \item $Ly = Pb$
+                        \item  $Ux = y$;
+                    \end{itemize}
+                \item vantagem: aplicável à qualquer matriz não singular;
+                \item desvantagem: alto custo para matrizes esparsas.
+            \end{itemize}
+        \subsection{Decomposição de Cholesky}
+            
+O método iterativo estrutura-se com a decomposição $A = HH^t$, sendo $H$ triangular inferior.
+Então é calculada a solução em duas etapas:
+\begin{itemize}[a)]
+    \item $Hy = Pb$
+    \item  $H^tx = y$.
+\end{itemize}
+Para que possamos determinar $H$, é necessário que a matriz $A$ seja simétrica definida positiva.
+
+Sabe-se que toda matriz Laplaciana de um grafo conexo é necessariamente simétrica semidefinida
+positiva, mas ao adicionar a matriz de penalidades, com valores grandes e positivos na diagonal,
+algumas posições da solução são fortemente forçadas a assumir os valores desejados definidos em b.
+Esses grandes valores diagonais empurram todos os autovalores da matriz para cima, garantindo
+que todos sejam estritamente positivos.
+
+Em conclusão, a matriz A torna-se simétrica definida positiva
+(SPD), o que justifica o uso seguro da Decomposição de Cholesky.
+Tal método tem como vantagem ser mais eficiente que LU, apesar de requerer que a matriz seja SPD.
+Para o teste com 400 valores, o método levou $306.722567$ segundos, ou seja, pouco mais de 5 minutos.
+\end{document}
