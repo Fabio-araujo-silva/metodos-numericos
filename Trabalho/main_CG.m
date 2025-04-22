@@ -1,6 +1,11 @@
+% Inteligando as arestas e cooordenadas do grafo
+% O comando Load é utilizado para ler dados numericos simples por isso a escolha 
+
 coordenadas = load('manh.xy');
 
 arestas = load('manh.el');
+
+% Como o arquivo começa no 0 e o matlab em 1 isso é para evitar problemas
 
 arestas = arestas + 1;
 
@@ -26,7 +31,13 @@ A = full(A);
 nos_maior = vc(maior_componente, 1:nvc(maior_componente));
 G_maior = subgraph(G, nos_maior);
 
+% Declarando essa variavel  que é o tamanho total de vértices da maior
+% componente conexa para 
+% ações futuras
+
    n = 8708;
+
+% Gráfico apenas da maior componente conexa
 
 % Adicionando valores em alguns vertices dos grafos 
 % teste com 400 vertices com valores aleatórios
@@ -134,17 +145,6 @@ valores(indices_vetores) = valores_definidos_vetores;
 valores_maior = valores(nos_maior); 
 G_maior.Nodes.Valor = valores_maior; 
 
-% Gráfico para ver os valores posicionados
-%figure;
-%p = plot(G_maior, ...
-   % 'XData', coordenadas(nos_maior,1), ...
-    %'YData', coordenadas(nos_maior,2), ...
-    %'NodeCData', G_maior.Nodes.Valor, ...
-    %'MarkerSize', 5);
-
-%colorbar;
-%title('Maior Componente Conexa com Valores nos Vértices');
-
 % Construindo a matriz Laplaciana
 
 L = laplacian(G_maior);
@@ -154,7 +154,7 @@ L = laplacian(G_maior);
 alpha = 1.0e7;
 
 %  Inicializa vetor diagonal 
-% Esse valor 8708 ele é o valor de vértices da maior componente conexa 
+% 8708 é o valor de vértices da maior componente conexa 
 
 diagonal_P = zeros(8708,1);
 
@@ -222,4 +222,4 @@ tempo_total = toc;
 
 disp(x);
 
-fprintf('tempo total: %.6f segundos\n', tempo_total);
+fprintf('convergiu com %d iterações e em %.6f segundos\n', k, tempo_total);
