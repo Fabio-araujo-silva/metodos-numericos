@@ -236,6 +236,8 @@ tic;
 
 % Resolve o sistema (LU)x = Pb usando substituições diretas
 
+y = sub_progressiva(L1, Lado_direito); 
+x = sub_regressiva(U1, y);    
 
 
 % Encerra o cronômetro interno e guarda o valor
