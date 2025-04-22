@@ -236,9 +236,7 @@ tic;
 
 % Resolve o sistema (LU)x = Pb usando substituições diretas
 
-y = L1\ Lado_direito;
 
-x = U1 \ y;
 
 % Encerra o cronômetro interno e guarda o valor
 tempo_total = toc;
