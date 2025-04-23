@@ -13,14 +13,6 @@ arestas = arestas + 1;
 
 G = graph(arestas(:,1), arestas(:,2));
 
-% Esse comandos são para visualizar o Gráfico
-
-%figure;
-
-%plot(G,'XData', coordenadas(:,1), 'YData', coordenadas(:,2),'NodeLabel', 1:numnodes(G));
-
-%title('Grafo de Manhattan');
-
 % Gera uma matriz de adjacência para que possa ser feita a função das
 % componentes sem problemas
 nv = 8837; % Esse valor é o tota de vértices do grafo
@@ -30,17 +22,6 @@ A = full(A);
 % Chamando a função que encontra a maior componente conexa do grafo
 
 [nc, nvc, vc] = Split_Edges(nv, A);
-
-%Esses comandos são para visualizar o gráfico
-%colors = lines(nc); 
-
-%figure;
-%hold on;
-%p = plot(G, 'XData', coordenadas(:,1), 'YData', coordenadas(:,2));
-%for i = 1:nc
-    %highlight(p, vc(i,1:nvc(i)), 'NodeColor', colors(i,:), 'MarkerSize', 6);
-%end
-%title('Componentes Conexos no Grafo de Manhattan');
 
 % Após o resultado da função Split_Edges vamos utilizar somente a maior
 % componente
@@ -56,14 +37,6 @@ G_maior = subgraph(G, nos_maior);
 
    n = 8708;
 
-% Gráfico apenas da maior componente conexa
-
-%figure;
-%plot(G_maior, ...
-     %'XData', coordenadas(nos_maior,1), ...
-     %'YData', coordenadas(nos_maior,2), ...
-     %'NodeLabel', {});
-%title('Maior Componente Conexa do Grafo de Manhattan');
 
 % Adicionando valores em alguns vertices dos grafos 
 % teste com 400 vertices com valores aleatórios
@@ -170,17 +143,6 @@ valores(indices_vetores) = valores_definidos_vetores;
 
 valores_maior = valores(nos_maior); 
 G_maior.Nodes.Valor = valores_maior; 
-
-% Gráfico para ver os valores posicionados
-%figure;
-%p = plot(G_maior, ...
-   % 'XData', coordenadas(nos_maior,1), ...
-    %'YData', coordenadas(nos_maior,2), ...
-    %'NodeCData', G_maior.Nodes.Valor, ...
-    %'MarkerSize', 5);
-
-%colorbar;
-%title('Maior Componente Conexa com Valores nos Vértices');
 
 % Construindo a matriz Laplaciana
 
