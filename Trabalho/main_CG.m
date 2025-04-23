@@ -223,3 +223,9 @@ tempo_total = toc;
 disp(x);
 
 fprintf('convergiu com %d iterações e em %.6f segundos\n', k, tempo_total);
+
+y = (L + p) \ p*b;
+
+disp(y);
+
+check_approximation(x, y)
