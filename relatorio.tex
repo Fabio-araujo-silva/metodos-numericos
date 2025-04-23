@@ -4,13 +4,21 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{mathtools}
-\usepackage{lmodern}
-\usepackage{tikz}
+\usepackage{amsthm} \usepackage{mathtools} \usepackage{lmodern} \usepackage{tikz}
+\usepackage{cancel}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage[shortlabels]{enumitem}
+\newcommand\myalign[1]{\centerline{$\displaystyle#1$}}
+\usepackage{tcolorbox} \tcbuselibrary{theorems}
+\newcommand{\heart}
+{\ensuremath\heartsuit}
+\newcommand{\mdc}{\mathrm{mdc}}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\gr}{Gr}
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\filledheart}{\ensuremath\varheartsuit}
 
 \title{Relatório – Solução de Sistemas Lineares Aplicados a Grafos de Manhattan}
 \author
@@ -74,12 +82,7 @@
     \section*{Métodos utilizados}
         \subsection*{Decomposição LU}
             \begin{itemize}
-                \item A matriz $A = L + P$ foi decomposta em  $A = LU$;
-                \item Resolvido em duas etapas:
-                    \begin{enumerate}[a)]
-                        \item $Ly = Pb$
-                        \item  $Ux = y$;
-                    \end{enumerate}
+                \item Convergiu em, aproximadamente, 13 minutos.
                 \item vantagem: aplicável à qualquer matriz não singular;
                 \item desvantagem: alto custo para matrizes esparsas.
             \end{itemize}
@@ -115,16 +118,13 @@
 
         \subsection*{Método de Jacobi}
             \begin{itemize}
-                \item Iterativo, baseado em $A = D + R$;
-                \item iteração:  $x^{k+1} = D^{-1} \left( Pb - Rx^k \right) $ ;
+                \item Iterativo;
                 \item vantagem: simples e paralelizável;
                 \item desvantagem: convergência lenta.
             \end{itemize}
         \subsection*{Gauss-Seidel}
             \begin{itemize}
                 \item Iterativo - usa atualizações imediatas;
-                \item iteração: $(x_i)^{k+1} = \left( 1/A_{ii} \right)
-                    \left( Pb_i - \text{ somas envolvendo } x^{k+1} \text{ e } x^k \right) $;
                 \item vantagem: converge mais rápido que Jacobi;
                 \item desvantagem: menos paralelizável.
             \end{itemize}
@@ -132,9 +132,10 @@
         \subsection*{Gradientes conjugados (CG)}
 
             \begin{itemize}
-                \item Iterativo para matrizes SPD;
-                \item minimiza $f\left( x \right) = 0.5x^T Ax - x^T Pb$;
-                \item atualiza $x$ em direções ortogonais;
+                \item Para um erro de 1.0e-6, convergiu com 413 iterações e em $0.1703$ segundos.
+                \item convergiu eficientemente, com uma norma $L^2$ da diferença em relação ao
+                    o resultado exato de 7.820973e-6 e uma norma relativa de 1.376981e-08;
+                \item iterativo para matrizes SPD;
                 \item vantagem: eficiente para matrizes grandes esparsas;
                 \item desvantagem: depende do condicionamento.
             \end{itemize}
