@@ -116,11 +116,14 @@
                 pouco mais de 5 minutos.
 
 
+        \bigbreak
+        \textbf{Para os métodos iterativos, utilizamos uma tolerância (erro) de 1.0e-6.}
         \subsection*{Método de Jacobi}
             \begin{itemize}
-                \item Iterativo;
-                \item vantagem: simples e paralelizável;
-                \item desvantagem: convergência lenta.
+                \item Convergiu com $1000$ iterações e em $0.1701$ segundo;
+                \item de todos os métodos iterativos, como veremos, este foi o que mais divergiu
+                    do resultado exato, com uma norma $L^2$ da diferença de 7.321143e-01 e uma
+                    norma relativa de 1.288980e-03;
             \end{itemize}
         \subsection*{Gauss-Seidel}
             \begin{itemize}
