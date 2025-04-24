@@ -82,13 +82,13 @@
     \section*{Métodos utilizados}
         \subsection*{Decomposição LU}
             \begin{itemize}
-                \item Convergiu em, aproximadamente, 13 minutos.
+                \item  Levou, aproximadamente, 13 minutos;
                 \item vantagem: aplicável à qualquer matriz não singular;
                 \item desvantagem: alto custo para matrizes esparsas.
             \end{itemize}
             \subsection*{Decomposição de Cholesky}
             
-                O método iterativo estrutura-se com a decomposição $A = HH^T$, sendo $H$ triangular
+                O método estrutura-se com a decomposição $A = HH^T$, sendo $H$ triangular
                 inferior.
                 Então é calculada a solução em duas etapas:
                 \begin{enumerate}[a)]
@@ -122,23 +122,25 @@
             \begin{itemize}
                 \item Convergiu com $1000$ iterações e em $0.1701$ segundo;
                 \item de todos os métodos iterativos, como veremos, este foi o que mais divergiu
-                    do resultado exato, com uma norma $L^2$ da diferença de 7.321143e-01 e uma
+                    do resultado exato, com uma norma $l^2$ da diferença de 7.321143e-01 e uma
                     norma relativa de 1.288980e-03;
             \end{itemize}
         \subsection*{Gauss-Seidel}
             \begin{itemize}
-                \item Iterativo - usa atualizações imediatas;
-                \item vantagem: converge mais rápido que Jacobi;
+                \item Convergiu com 1000 iterações e em $0.1471$ segundos;
+                \item se aproximou mais da solução exata do que o método de Jacobi, com uma norma
+                     $l^2$ da diferença de 2.023120e-02 e uma norma relativa de 3.561958e-05
+                \item vantagem: converge mais rápido e melhor que Jacobi;
                 \item desvantagem: menos paralelizável.
             \end{itemize}
 
         \subsection*{Gradientes conjugados (CG)}
 
             \begin{itemize}
-                \item Para um erro de 1.0e-6, convergiu com 413 iterações e em $0.1703$ segundos.
-                \item convergiu eficientemente, com uma norma $L^2$ da diferença em relação ao
+                \item Convergiu com 413 iterações e em $0.1703$ segundos.
+                \item convergiu eficientemente, com uma norma $l^2$ da diferença em relação ao
                     o resultado exato de 7.820973e-6 e uma norma relativa de 1.376981e-08;
-                \item iterativo para matrizes SPD;
+                \item exclusivo para matrizes SPD;
                 \item vantagem: eficiente para matrizes grandes esparsas;
                 \item desvantagem: depende do condicionamento.
             \end{itemize}
