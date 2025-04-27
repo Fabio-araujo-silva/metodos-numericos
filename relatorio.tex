@@ -1,14 +1,14 @@
-\documentclass{article} % change to article if necessary 
+\documentclass{beamer} % change to article if necessary 
 \usepackage[brazilian]{babel}
 \usepackage{graphicx, txfonts} % Required for inserting images
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{amsthm} \usepackage{mathtools} \usepackage{lmodern} \usepackage{tikz}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage{tikz}
 \usepackage{cancel}
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage[shortlabels]{enumitem}
 \newcommand\myalign[1]{\centerline{$\displaystyle#1$}}
 \usepackage{tcolorbox} \tcbuselibrary{theorems}
 \newcommand{\heart}
@@ -20,28 +20,26 @@
 \DeclareMathOperator{\tr}{tr}
 \newcommand{\filledheart}{\ensuremath\varheartsuit}
 
-\title{Relatório – Solução de Sistemas Lineares Aplicados a Grafos de Manhattan}
-\author
-{
-  Vinícius Girão de Castro | 15491730 \\
-  Natália Carvalho | 15497232 \\
-  Larissa Rocha Gonçalves| 15522431\\
-  Fábio Araujo | 16311045 \\
-}
-\date{}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\title[Computando a criminalidade em Manhattan]{Sobre diferentes métodos de resolução de sistemas lineares para computar os índices de criminalidade sobre um grafo de Manhattan}
+\author[Vinícius, Natália, Larissa, Fábio]{Vinícius Girão \and Natália Carvalho \and Larissa Rocha \and Fábio Kauê}
+\institute[ICMC]{Instituto de Ciências Matématicas e de Computação da Universidade de São Paulo}
 
 \pdfsuppresswarningpagegroup=1
 
 %\newtheorem{theorem}{Teorema}[section]
 %\newtheorem{prop}{Proposição}[theorem]
-\newtheorem{definition}{Definição}[section]
-\newtheorem{exer}{}[section]
+\newtheorem{exer}{Exercício}[section]
 \newtheorem{prop}{Proposição}[section]
 \newtheorem{cor}{Corolário}[prop]
 \newtheorem{exemplo}{Exemplo}[section]
 \newtheorem{resultado}{Resultado}[section]
 \newtcbtheorem[number within=section]{theorem}{Teorema}%
 {colback=red!5,colframe=red!35!black,fonttitle=\bfseries}{th}
+\newtcbtheorem[number within=section]{definition}{Definição}%
+{colback=blue!5,colframe=blue!35!black,fonttitle=\bfseries}{df}
 \newtcbtheorem[number within=section]{propp}{Proposição}%
 {colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{pr}
 \newtcbtheorem[number within=section]{lema}{Lema}%
@@ -51,130 +49,89 @@
 \newenvironment{dem}{\paragraph{\textit{Dem.:}}}{\hfill$\square$}
 
 \begin{document}
-\maketitle
-    \section*{Objetivo}
-        Este trabalho tem como objetivo resolver um sistema linear oriundo de um grafo de ruas da 
-        ilha de Manhattan, utilizando diferentes métodos numéricos: LU, Cholesky,
-        Jacobi, Gauss-Seidel e Gradientes Conjugados; e comparar o desempenho de cada um.
-    \section*{Descrição do problema}
-        Utilizando os arquivos manh.el (arestas) e manh.xy (coordenadas dos vértices),
-        foi construído um grafo representando o sistema de ruas de Manhattan.
-        As etapas seguidas foram:
-        \begin{itemize}
-            \item Seleção da maior componente conexa do grafo;
-            \item escolha de $k$ vértices aleatórios $v_{i1}, v_{i2}, \ldots, v_{ik}$ e atribuição
-                de valores $c_{i1}, c_{i2}, \ldots, c_{ik} \in (0, 10];$
-            \item construção da matriz Laplaciana $L$ do grafo;
-            \item Construção da matriz de penalidades  $P = \left(P_{ij}\right) $, onde  
-                $$P_{ij} =
-                \begin{cases}
-                    \alpha = 1.0e7, \text{ se $j$ é um índice de um vértice escolhido} \\
-                    0, \text{ caso contrário;}
-                \end{cases}$$
-            \item construção do vetor $b = \left( b_j \right)$, onde
-                $$b_j= 
-                \begin{cases}
-                    c_{i_s}, \text{ se } $j=i_s$ \\
-                    0, \text{ caso contrário;}
-                \end{cases}$$
-            \item resolução do sistema $\left(L+P \right)x=Pb$.
-         \end{itemize}
-    \section*{Métodos utilizados}
-        \subsection*{Decomposição LU}
-            \begin{itemize}
-                \item  Levou, aproximadamente, 13 minutos;
-                \item vantagem: aplicável à qualquer matriz não singular;
-                \item desvantagem: alto custo para matrizes esparsas.
-            \end{itemize}
-            \subsection*{Decomposição de Cholesky}
-            
-                O método estrutura-se com a decomposição $A = HH^T$, sendo $H$ triangular
-                inferior.
-                Então é calculada a solução em duas etapas:
-                \begin{enumerate}[a)]
-                    \item $Hy = Pb$
-                    \item $H^Tx = y$.
+    \frame{\titlepage}
+
+    \begin{frame}{Para os métodos iterativos...}
+        \pause
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \begin{enumerate}
+                    \item Utilizamos uma tolerância de 1e-6.
+                    \pause
+                    \item Empregamos a norma $\ell^2$ (euclidiana para vetores reais) para verificar a qualidade da convergência de cada método. Além disso, também calculamos a norma relativa da seguinte forma:
+                    \pause
+                        $$\ell^2_{rel}(x) = \frac{\|x - y\|}{\|y\| + \epsilon }, \text{ com } \epsilon > 0,$$
+                    \pause
+                        onde $y$ é a solução exata.
                 \end{enumerate}
-                Para que possamos determinar $H$, é necessário que a matriz $A$ seja simétrica
-                definida positiva.
-
-                Sabe-se que toda matriz Laplaciana de um grafo conexo é necessariamente simétrica 
-                semidefinida
-                positiva, mas ao adicionar a matriz de penalidades, com valores grandes e positivos 
-                na diagonal,
-                algumas posições da solução são fortemente forçadas a assumir os valores desejados
-                definidos em b.
-                Esses grandes valores diagonais empurram todos os autovalores da matriz para cima,
-                garantindo
-                que todos sejam estritamente positivos.
-
-                Em conclusão, a matriz A torna-se simétrica definida positiva
-                (SPD), o que justifica o uso seguro da Decomposição de Cholesky.
-                Tal método tem como vantagem ser mais eficiente que LU, apesar de requerer que a 
-                matriz seja SPD.
-                Para o teste com 400 valores, o método levou $306.722567$ segundos, ou seja, 
-                pouco mais de 5 minutos.
-
-
-        \bigbreak
-        \textbf{Para os métodos iterativos, utilizamos uma tolerância (erro) de 1.0e-6.}
-        \subsection*{Método de Jacobi}
-            \begin{itemize}
-                \item Convergiu com $1000$ iterações e em $0.1701$ segundo;
-                \item de todos os métodos iterativos, como veremos, este foi o que mais divergiu
-                    do resultado exato, com uma norma $l^2$ da diferença de 7.321143e-01 e uma
-                    norma relativa de 1.288980e-03;
-            \end{itemize}
-        \subsection*{Gauss-Seidel}
-            \begin{itemize}
-                \item Convergiu com 1000 iterações e em $0.1471$ segundos;
-                \item se aproximou mais da solução exata do que o método de Jacobi, com uma norma
-                     $l^2$ da diferença de 2.023120e-02 e uma norma relativa de 3.561958e-05
-                \item vantagem: converge mais rápido e melhor que Jacobi;
-                \item desvantagem: menos paralelizável.
-            \end{itemize}
-
-        \subsection*{Gradientes conjugados (CG)}
-
-            \begin{itemize}
-                \item Convergiu com 413 iterações e em $0.1703$ segundos.
-                \item convergiu eficientemente, com uma norma $l^2$ da diferença em relação ao
-                    o resultado exato de 7.820973e-6 e uma norma relativa de 1.376981e-08;
-                \item exclusivo para matrizes SPD;
-                \item vantagem: eficiente para matrizes grandes esparsas;
-                \item desvantagem: depende do condicionamento.
-            \end{itemize}
-
-        \subsection*{Comparativo dos métodos}
-                \begin{table}[h!]
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \pause
                 \centering
-                \caption{Comparação dos métodos}
-                \renewcommand{\arraystretch}{1.3} % Aumenta o espaçamento entre linhas
-                \begin{tabularx}{\textwidth}{@{}lXXXXX@{}} % 1 coluna fixa + 5 expansíveis
-                \toprule
-                Método         & LU      & Cholesky & Jacobi    & Gauss-Seidel & CG \\
-                \midrule
-                Tipo           & Direto  & Direto   & Iterativo & Iterativo    & Iterativo \\
-                Requisitos     & Matriz não singular 
-                               & Matriz SPD 
-                               & Preferível diagonal dominante 
-                               & Igual ao Jacobi 
-                               & Matriz SPD \\
-                Observações    & Alto custo de memória 
-                               & Mais eficiente que LU 
-                               & Convergência lenta 
-                               & Convergência mais rápida 
-                               & Melhor desempenho geral \\
-                \bottomrule
-                \end{tabularx}
-                \end{table}
-        \subsection*{Conclusão}
+                \includegraphics[width=\textwidth]{exactsolution.jpeg}
+                \pause
+                \caption{\scriptsize{Buscamos uma solução dessa forma.}}
+            \end{column}
+            
+        \end{columns}
+    \end{frame}
 
-            Todos os métodos foram capazes de resolver o sistema. 
-            Os métodos diretos (LU e Cholesky) forneceram soluções exatas rapidamente,
-            com destaque para o Cholesky, que foi mais eficiente devido à estrutura da matriz.
+    \begin{frame}{Gauss-Jacobi}
+        \pause
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+               \begin{enumerate}
+                   \item Convergiu com 1000 iterações e em 0.545334 segundo.
+                    \pause
+                    \item Este método foi o que mais divergiu do resultado exato, com uma norma $\ell^2$ da diferença de 3.768525e+02 e uma norma relativa de 8.318139e-01, o que justifica o mapa insatisfatório.
+               \end{enumerate} 
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{GJinterpol.jpeg}
+            \end{column}
+        \end{columns}
+    \end{frame}
 
-            Entre os iterativos, os Gradientes Conjugados apresentaram o melhor desempenho para
-            o caso estudado, sendo uma excelente opção para problemas de grande escala com
-            matrizes esparsas e SPD.
-            \end{document}
+    \begin{frame}{Gauss-Seidel}
+        \pause
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+               \begin{enumerate}
+                   \item Convergiu com 1000 iterações e em 0.368160 segundo.
+                    \pause
+                    \item Apesar de ter se aproximado mais da solução exata do que o método de Jacobi, com uma norma $\ell^2$ da diferença de 3.274648e+02 e uma norma relativa de 7.228020e-01, o método de Gauss-Seidel ainda resulta numa representação longe da ideal.
+               \end{enumerate} 
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \pause
+                \centering
+                \includegraphics[width=\textwidth]{GSinterpol.jpeg}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}{Gradientes conjugados}
+        \pause
+        \begin{columns}
+            \begin{column}{0.5\textwidth}            
+                \begin{enumerate}
+                    \item A convergência do método dos gradientes conjugados é garantida pelo fato de que a matriz  $L + P$ é simétrica definida positiva.
+                    \pause
+                    \item  O método CG convergiu com 1101 iterações e em 0.1703 segundo.
+                    \pause
+                    \item Convergiu eficientemente, com uma norma $\mathcal{\ell}^2$ da diferença em relação ao resultado exato de 3.172346e-05 e uma norma relativa de 7.002212e-08.
+                    \pause
+                \end{enumerate}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{CGinterpol.jpeg}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}{Interpretando os resultados}
+
+    \end{frame}
+\end{document}
