@@ -148,13 +148,6 @@ disp(x);
 
 fprintf('convergiu com %d iterações e em %.6f segundos\n', k, tempo_total);
 
-plot(G_maior, 'XData', coordenadas(nos_maior,1), ...
-                 'YData', coordenadas(nos_maior,2), ...
-                 'NodeCData', x, 'MarkerSize', 4);
-colormap(flipud(hot));
-colorbar;
-title('Solução interpolada Jacobi');
-
 y = (L + p) \ p*b;
 
 check_approximation(x, y);
