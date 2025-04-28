@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1745717626.97532 "relatorio.tex" "relatorio.pdf" "relatorio" 1745717629.97528 2
+["pdflatex"] 1745843367.62461 "relatorio.tex" "relatorio.pdf" "relatorio" 1745843371.45429 2
   "/opt/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1734761898 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/opt/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1734761898 2840 216e6e45ad352e2456e1149f28885bee ""
   "/opt/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1734761898 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -31,6 +31,7 @@
   "/opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsso10.pfb" 1734761898 108953 1f7b36ba493bc956ac3c5eab8852ab76 ""
   "/opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsso8.pfb" 1734761898 106860 a773e4958b589eadcc5b01a914624508 ""
   "/opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb" 1734761898 27863 09ce3735688ffde955e72da27c95b61a ""
+  "/opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb" 1734761898 27802 5c876bb2c4040caaf035d60bd74a86bd ""
   "/opt/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1734761898 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/opt/texlive/2024/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1734761898 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/opt/texlive/2024/texmf-dist/tex/generic/babel-portuges/brazilian.ldf" 1734761898 6597 42365ae9d65bdf8ee8f1d7ffb5499d5b ""
@@ -238,11 +239,12 @@
   "CGinterpol.jpeg" 1745706444.97734 40414 341a57ab7f30974c8a4460540d7b9212 ""
   "GJinterpol.jpeg" 1745708614.08053 33859 37909b5305b3c586e00a708a2b54b6f7 ""
   "GSinterpol.jpeg" 1745708620.74068 35558 10780e6438e54e13feec0937f8e7ccef ""
+  "crimemap.png" 1745840668.33758 686228 bba77028db3a1bdefee4e1d3fafa7870 ""
   "exactsolution.jpeg" 1745714568.71036 42219 bcc3e09385d263b727bde5be184fc7a2 ""
-  "relatorio.aux" 1745717629.74047 1374 b28fab32a2154c92eedb39a08cc6346a "pdflatex"
-  "relatorio.nav" 1745717629.74047 765 60db02ecea436c41fe4174629c1f76cd "pdflatex"
-  "relatorio.out" 1745717628.43712 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "relatorio.tex" 1745717625.76043 5701 0e74d3fc1634586b591063d2a5ec3f1d ""
+  "relatorio.aux" 1745843371.21263 1882 509f60db519fa1cac2340dc4e1e8028c "pdflatex"
+  "relatorio.nav" 1745843371.21263 1129 452b6568cf5ee65a0bc817a493924313 "pdflatex"
+  "relatorio.out" 1745843369.04259 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "relatorio.tex" 1745843365.59252 6957 d6ea9262a35ff740e19c737c8b46ef1e ""
   (generated)
   "relatorio.aux"
   "relatorio.log"

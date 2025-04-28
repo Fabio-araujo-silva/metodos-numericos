@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.21)  26 APR 2025 22:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.21)  28 APR 2025 09:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -992,64 +992,64 @@ Dictionary: translator-theorem-dictionary, Language: English
 [1
 
 {/opt/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 77.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 75.
  (/opt/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 77.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 75.
  (/opt/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 77.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 75.
  (/opt/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 77.
+(Font)              <10.95> on input line 75.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 77.
+(Font)              <8> on input line 75.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 77.
-LaTeX Font Info:    Trying to load font information for U+txsya on input line 77.
+(Font)              <6> on input line 75.
+LaTeX Font Info:    Trying to load font information for U+txsya on input line 75.
  (/opt/texlive/2024/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsyb on input line 77.
+LaTeX Font Info:    Trying to load font information for U+txsyb on input line 75.
  (/opt/texlive/2024/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for OT1+txr on input line 77.
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 75.
  (/opt/texlive/2024/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 77.
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 75.
  (/opt/texlive/2024/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 77.
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 75.
  (/opt/texlive/2024/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 77.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 75.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 77.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 75.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 77.
-<exactsolution.jpeg, id=62, 702.625pt x 526.96875pt>
-File: exactsolution.jpeg Graphic file (type jpg)
-<use exactsolution.jpeg>
-Package pdftex.def Info: exactsolution.jpeg  used on input line 77.
-(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 75.
+<crimemap.png, id=62, 582.175pt x 945.5325pt>
+File: crimemap.png Graphic file (type png)
+<use crimemap.png>
+Package pdftex.def Info: crimemap.png  used on input line 75.
+(pdftex.def)             Requested size: 128.30098pt x 208.37848pt.
 
 
-./relatorio.tex:77: LaTeX Error: \caption outside figure or table.
+./relatorio.tex:75: LaTeX Error: \caption outside figure or table.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77     \end{frame}
+l.75     \end{frame}
                     
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1058,20 +1058,20 @@ If that doesn't work, type  X <return>  to quit.
 
 [2
 
-{/opt/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/opt/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./exactsolution.jpeg>]
-File: exactsolution.jpeg Graphic file (type jpg)
-<use exactsolution.jpeg>
-Package pdftex.def Info: exactsolution.jpeg  used on input line 77.
-(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+{/opt/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/opt/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./crimemap.png>]
+File: crimemap.png Graphic file (type png)
+<use crimemap.png>
+Package pdftex.def Info: crimemap.png  used on input line 75.
+(pdftex.def)             Requested size: 128.30098pt x 208.37848pt.
 
 
-./relatorio.tex:77: LaTeX Error: \caption outside figure or table.
+./relatorio.tex:75: LaTeX Error: \caption outside figure or table.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77     \end{frame}
+l.75     \end{frame}
                     
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1081,19 +1081,19 @@ If that doesn't work, type  X <return>  to quit.
 [3
 
 ]
-File: exactsolution.jpeg Graphic file (type jpg)
-<use exactsolution.jpeg>
-Package pdftex.def Info: exactsolution.jpeg  used on input line 77.
-(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+File: crimemap.png Graphic file (type png)
+<use crimemap.png>
+Package pdftex.def Info: crimemap.png  used on input line 75.
+(pdftex.def)             Requested size: 128.30098pt x 208.37848pt.
 
 
-./relatorio.tex:77: LaTeX Error: \caption outside figure or table.
+./relatorio.tex:75: LaTeX Error: \caption outside figure or table.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77     \end{frame}
+l.75     \end{frame}
                     
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1103,19 +1103,19 @@ If that doesn't work, type  X <return>  to quit.
 [4
 
 ]
-File: exactsolution.jpeg Graphic file (type jpg)
-<use exactsolution.jpeg>
-Package pdftex.def Info: exactsolution.jpeg  used on input line 77.
-(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+File: crimemap.png Graphic file (type png)
+<use crimemap.png>
+Package pdftex.def Info: crimemap.png  used on input line 75.
+(pdftex.def)             Requested size: 128.30098pt x 208.37848pt.
 
 
-./relatorio.tex:77: LaTeX Error: \caption outside figure or table.
+./relatorio.tex:75: LaTeX Error: \caption outside figure or table.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77     \end{frame}
+l.75     \end{frame}
                     
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1125,19 +1125,19 @@ If that doesn't work, type  X <return>  to quit.
 [5
 
 ]
-File: exactsolution.jpeg Graphic file (type jpg)
-<use exactsolution.jpeg>
-Package pdftex.def Info: exactsolution.jpeg  used on input line 77.
-(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+File: crimemap.png Graphic file (type png)
+<use crimemap.png>
+Package pdftex.def Info: crimemap.png  used on input line 75.
+(pdftex.def)             Requested size: 128.30098pt x 208.37848pt.
 
 
-./relatorio.tex:77: LaTeX Error: \caption outside figure or table.
+./relatorio.tex:75: LaTeX Error: \caption outside figure or table.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77     \end{frame}
+l.75     \end{frame}
                     
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1147,19 +1147,19 @@ If that doesn't work, type  X <return>  to quit.
 [6
 
 ]
-File: exactsolution.jpeg Graphic file (type jpg)
-<use exactsolution.jpeg>
-Package pdftex.def Info: exactsolution.jpeg  used on input line 77.
-(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+File: crimemap.png Graphic file (type png)
+<use crimemap.png>
+Package pdftex.def Info: crimemap.png  used on input line 75.
+(pdftex.def)             Requested size: 128.30098pt x 208.37848pt.
 
 
-./relatorio.tex:77: LaTeX Error: \caption outside figure or table.
+./relatorio.tex:75: LaTeX Error: \caption outside figure or table.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77     \end{frame}
+l.75     \end{frame}
                     
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1169,141 +1169,269 @@ If that doesn't work, type  X <return>  to quit.
 [7
 
 ]
+<exactsolution.jpeg, id=229, 702.625pt x 526.96875pt>
 File: exactsolution.jpeg Graphic file (type jpg)
 <use exactsolution.jpeg>
-Package pdftex.def Info: exactsolution.jpeg  used on input line 77.
+Package pdftex.def Info: exactsolution.jpeg  used on input line 80.
+(pdftex.def)             Requested size: 342.2953pt x 256.72937pt.
+
+
+[8
+
+ <./exactsolution.jpeg>]
+
+[9
+
+]
+
+[10
+
+]
+File: exactsolution.jpeg Graphic file (type jpg)
+<use exactsolution.jpeg>
+Package pdftex.def Info: exactsolution.jpeg  used on input line 112.
 (pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
 
 
-./relatorio.tex:77: LaTeX Error: \caption outside figure or table.
+./relatorio.tex:112: LaTeX Error: \caption outside figure or table.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77     \end{frame}
-                    
+l.112     \end{frame}
+                     
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
 
-[8
-
-]
-<GJinterpol.jpeg, id=253, 702.625pt x 526.96875pt>
-File: GJinterpol.jpeg Graphic file (type jpg)
-<use GJinterpol.jpeg>
-Package pdftex.def Info: GJinterpol.jpeg  used on input line 94.
-(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
-
-
-[9
-
- <./GJinterpol.jpeg>]
-File: GJinterpol.jpeg Graphic file (type jpg)
-<use GJinterpol.jpeg>
-Package pdftex.def Info: GJinterpol.jpeg  used on input line 94.
-(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
-
-
-[10
-
-]
-File: GJinterpol.jpeg Graphic file (type jpg)
-<use GJinterpol.jpeg>
-Package pdftex.def Info: GJinterpol.jpeg  used on input line 94.
-(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
-
-
 [11
 
 ]
-<GSinterpol.jpeg, id=333, 702.625pt x 526.96875pt>
-File: GSinterpol.jpeg Graphic file (type jpg)
-<use GSinterpol.jpeg>
-Package pdftex.def Info: GSinterpol.jpeg  used on input line 112.
+File: exactsolution.jpeg Graphic file (type jpg)
+<use exactsolution.jpeg>
+Package pdftex.def Info: exactsolution.jpeg  used on input line 112.
 (pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
+
+./relatorio.tex:112: LaTeX Error: \caption outside figure or table.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112     \end{frame}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 
 [12
 
- <./GSinterpol.jpeg>]
-File: GSinterpol.jpeg Graphic file (type jpg)
-<use GSinterpol.jpeg>
-Package pdftex.def Info: GSinterpol.jpeg  used on input line 112.
+]
+File: exactsolution.jpeg Graphic file (type jpg)
+<use exactsolution.jpeg>
+Package pdftex.def Info: exactsolution.jpeg  used on input line 112.
 (pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
+
+./relatorio.tex:112: LaTeX Error: \caption outside figure or table.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112     \end{frame}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 
 [13
 
 ]
-File: GSinterpol.jpeg Graphic file (type jpg)
-<use GSinterpol.jpeg>
-Package pdftex.def Info: GSinterpol.jpeg  used on input line 112.
+File: exactsolution.jpeg Graphic file (type jpg)
+<use exactsolution.jpeg>
+Package pdftex.def Info: exactsolution.jpeg  used on input line 112.
 (pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
+
+./relatorio.tex:112: LaTeX Error: \caption outside figure or table.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112     \end{frame}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 
 [14
 
 ]
-File: GSinterpol.jpeg Graphic file (type jpg)
-<use GSinterpol.jpeg>
-Package pdftex.def Info: GSinterpol.jpeg  used on input line 112.
+File: exactsolution.jpeg Graphic file (type jpg)
+<use exactsolution.jpeg>
+Package pdftex.def Info: exactsolution.jpeg  used on input line 112.
 (pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
+
+./relatorio.tex:112: LaTeX Error: \caption outside figure or table.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112     \end{frame}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 
 [15
 
 ]
-<CGinterpol.jpeg, id=441, 702.625pt x 526.96875pt>
-File: CGinterpol.jpeg Graphic file (type jpg)
-<use CGinterpol.jpeg>
-Package pdftex.def Info: CGinterpol.jpeg  used on input line 132.
+File: exactsolution.jpeg Graphic file (type jpg)
+<use exactsolution.jpeg>
+Package pdftex.def Info: exactsolution.jpeg  used on input line 112.
 (pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
+
+./relatorio.tex:112: LaTeX Error: \caption outside figure or table.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112     \end{frame}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 
 [16
 
- <./CGinterpol.jpeg>]
-File: CGinterpol.jpeg Graphic file (type jpg)
-<use CGinterpol.jpeg>
-Package pdftex.def Info: CGinterpol.jpeg  used on input line 132.
+]
+<GJinterpol.jpeg, id=474, 702.625pt x 526.96875pt>
+File: GJinterpol.jpeg Graphic file (type jpg)
+<use GJinterpol.jpeg>
+Package pdftex.def Info: GJinterpol.jpeg  used on input line 129.
 (pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
 
 
 [17
 
-]
-File: CGinterpol.jpeg Graphic file (type jpg)
-<use CGinterpol.jpeg>
-Package pdftex.def Info: CGinterpol.jpeg  used on input line 132.
+ <./GJinterpol.jpeg>]
+File: GJinterpol.jpeg Graphic file (type jpg)
+<use GJinterpol.jpeg>
+Package pdftex.def Info: GJinterpol.jpeg  used on input line 129.
 (pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
 
 
 [18
 
 ]
-File: CGinterpol.jpeg Graphic file (type jpg)
-<use CGinterpol.jpeg>
-Package pdftex.def Info: CGinterpol.jpeg  used on input line 132.
+File: GJinterpol.jpeg Graphic file (type jpg)
+<use GJinterpol.jpeg>
+Package pdftex.def Info: GJinterpol.jpeg  used on input line 129.
 (pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
 
 
 [19
 
 ]
-File: CGinterpol.jpeg Graphic file (type jpg)
-<use CGinterpol.jpeg>
-Package pdftex.def Info: CGinterpol.jpeg  used on input line 132.
+<GSinterpol.jpeg, id=554, 702.625pt x 526.96875pt>
+File: GSinterpol.jpeg Graphic file (type jpg)
+<use GSinterpol.jpeg>
+Package pdftex.def Info: GSinterpol.jpeg  used on input line 147.
 (pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
 
 
 [20
 
-]
+ <./GSinterpol.jpeg>]
+File: GSinterpol.jpeg Graphic file (type jpg)
+<use GSinterpol.jpeg>
+Package pdftex.def Info: GSinterpol.jpeg  used on input line 147.
+(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
 
 [21
+
+]
+File: GSinterpol.jpeg Graphic file (type jpg)
+<use GSinterpol.jpeg>
+Package pdftex.def Info: GSinterpol.jpeg  used on input line 147.
+(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
+
+[22
+
+]
+File: GSinterpol.jpeg Graphic file (type jpg)
+<use GSinterpol.jpeg>
+Package pdftex.def Info: GSinterpol.jpeg  used on input line 147.
+(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
+
+[23
+
+]
+<CGinterpol.jpeg, id=659, 702.625pt x 526.96875pt>
+File: CGinterpol.jpeg Graphic file (type jpg)
+<use CGinterpol.jpeg>
+Package pdftex.def Info: CGinterpol.jpeg  used on input line 167.
+(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
+
+[24
+
+ <./CGinterpol.jpeg>]
+File: CGinterpol.jpeg Graphic file (type jpg)
+<use CGinterpol.jpeg>
+Package pdftex.def Info: CGinterpol.jpeg  used on input line 167.
+(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
+
+[25
+
+]
+File: CGinterpol.jpeg Graphic file (type jpg)
+<use CGinterpol.jpeg>
+Package pdftex.def Info: CGinterpol.jpeg  used on input line 167.
+(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
+
+[26
+
+]
+File: CGinterpol.jpeg Graphic file (type jpg)
+<use CGinterpol.jpeg>
+Package pdftex.def Info: CGinterpol.jpeg  used on input line 167.
+(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
+
+[27
+
+]
+File: CGinterpol.jpeg Graphic file (type jpg)
+<use CGinterpol.jpeg>
+Package pdftex.def Info: CGinterpol.jpeg  used on input line 167.
+(pdftex.def)             Requested size: 171.14764pt x 128.35664pt.
+
+
+[28
+
+]
+
+[29
 
 ]
 \tf@nav=\write6
@@ -1324,18 +1452,18 @@ Package rerunfilecheck Info: File `relatorio.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29709 strings out of 473330
- 596948 string characters out of 5697196
- 961887 words of memory out of 5000000
- 52217 multiletter control sequences out of 15000+600000
+ 29740 strings out of 473330
+ 597296 string characters out of 5697196
+ 962878 words of memory out of 5000000
+ 52232 multiletter control sequences out of 15000+600000
  587944 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,413b,963s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss12.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss8.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on relatorio.pdf (21 pages, 316294 bytes).
+</opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss12.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss8.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on relatorio.pdf (29 pages, 954523 bytes).
 PDF statistics:
- 646 PDF objects out of 1000 (max. 8388607)
- 579 compressed objects within 6 object streams
- 43 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 871 PDF objects out of 1000 (max. 8388607)
+ 786 compressed objects within 8 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 110 words of extra memory for PDF output out of 10000 (max. 10000000)
 

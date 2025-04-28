@@ -23,7 +23,7 @@
 \usetheme{Madrid}
 \usecolortheme{default}
 
-\title[Computando a criminalidade em Manhattan]{Sobre diferentes métodos de resolução de sistemas lineares para computar os índices de criminalidade sobre um grafo de Manhattan}
+\title[Trabalho de Cálculo Numérico]{Sobre diferentes métodos de resolução de sistemas lineares para computar os índices de criminalidade sobre um grafo de Manhattan}
 \author[Vinícius, Natália, Larissa, Fábio]{Vinícius Girão \and Natália Carvalho \and Larissa Rocha \and Fábio Kauê}
 \institute[ICMC]{Instituto de Ciências Matématicas e de Computação da Universidade de São Paulo}
 
@@ -50,6 +50,42 @@
 
 \begin{document}
     \frame{\titlepage}
+    \begin{frame}{O que fizemos?}
+    \pause
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{enumerate}
+                \item Extraímos a maior componente conexa do grafo providenciado.
+                \pause
+                \item Escolhemos, convenientemente, 10 vértices do grafo e valores, entre 1 e 10, para cada um destes.
+                \pause
+                \item Construímos a matriz laplaciana $L$ e a matriz de penalidades $P$, com $\alpha = 10^{-7}$, assim como o vetor $b$, como instruído.
+                \pause
+                \item Resolvemos o sistema  $\left( L + P \right)x = Pb $ por meio de diferentes métodos e comparamos os resultados obtidos.
+
+            \end{enumerate}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \pause
+            \centering
+            \includegraphics[width=\textwidth, height=0.8\textheight, keepaspectratio]{crimemap.png}
+            \caption{\scriptsize{Fonte:safemap.io/NYC Open Data}}
+        \end{column}
+    \end{columns}
+    \end{frame}
+    
+    \begin{frame}
+        \centering
+        \includegraphics[width=\textwidth]{exactsolution.jpeg}
+    \end{frame}
+
+    \begin{frame}{Decomposição LU}
+        
+    \end{frame}
+
+    \begin{frame}{Cholesky}
+        
+    \end{frame}
 
     \begin{frame}{Para os métodos iterativos...}
         \pause
@@ -61,7 +97,6 @@
                     \item Empregamos a norma $\ell^2$ (euclidiana para vetores reais) para verificar a qualidade da convergência de cada método. Além disso, também calculamos a norma relativa da seguinte forma:
                     \pause
                         $$\ell^2_{rel}(x) = \frac{\|x - y\|}{\|y\| + \epsilon }, \text{ com } \epsilon > 0,$$
-                    \pause
                         onde $y$ é a solução exata.
                 \end{enumerate}
             \end{column}
@@ -83,7 +118,7 @@
                \begin{enumerate}
                    \item Convergiu com 1000 iterações e em 0.545334 segundo.
                     \pause
-                    \item Este método foi o que mais divergiu do resultado exato, com uma norma $\ell^2$ da diferença de 3.768525e+02 e uma norma relativa de 8.318139e-01, o que justifica o mapa insatisfatório.
+                    \item Este método foi o que mais divergiu do resultado exato, com uma norma $\ell^2$ da diferença em relação ao resultado exato de 3.768525e+02 e uma norma relativa de 8.318139e-01, o que justifica o mapa insatisfatório.
                \end{enumerate} 
             \end{column}
             \begin{column}{0.5\textwidth}
@@ -120,7 +155,7 @@
                     \pause
                     \item  O método CG convergiu com 1101 iterações e em 0.1703 segundo.
                     \pause
-                    \item Convergiu eficientemente, com uma norma $\mathcal{\ell}^2$ da diferença em relação ao resultado exato de 3.172346e-05 e uma norma relativa de 7.002212e-08.
+                    \item Convergiu eficientemente, com uma norma $\mathcal{\ell}^2$ da diferença de 3.172346e-05 e uma norma relativa de 7.002212e-08.
                     \pause
                 \end{enumerate}
             \end{column}
