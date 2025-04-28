@@ -40,11 +40,11 @@ G_maior = subgraph(G, nos_maior);
 % Gráfico apenas da maior componente conexa
 
 % Adicionando valores em alguns vertices dos grafos 
-% teste com 400 vertices com valores aleatórios
+% teste com 10 valores
 
 valores_definidos = [01, 01, 03, 10, 03, 04, 03, 04, 06, 03];
 
-% Também foram gerados 400 vértices de forma aleatoria
+% atribuidos aos indices
 
 indices = [4949, 2741, 210, 2756, 8610, 8119, 3424, 5055, 6634, 1696];
 
