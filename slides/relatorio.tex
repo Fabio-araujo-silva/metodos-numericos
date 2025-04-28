@@ -1,5 +1,4 @@
-\documentclass{beamer} % change to article if necessary 
-\usepackage[brazilian]{babel}
+\documentclass{beamer} % change to article if necessary \usepackage[brazilian]{babel}
 \usepackage{graphicx, txfonts} % Required for inserting images
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -24,7 +23,7 @@
 \usecolortheme{default}
 
 \title[Trabalho de Cálculo Numérico]{Sobre diferentes métodos de resolução de sistemas lineares para computar os índices de criminalidade sobre um grafo de Manhattan}
-\author[Vinícius, Natália, Larissa, Fábio]{Vinícius Girão \and Natália Carvalho \and Larissa Rocha \and Fábio Kauê}
+\author[Vinícius, Natália, Larissa, Fábio]{Vinícius Girão \and Natália Carvalho \and Larissa Rocha \and Fabio Araujo}
 \institute[ICMC]{Instituto de Ciências Matématicas e de Computação da Universidade de São Paulo}
 
 \pdfsuppresswarningpagegroup=1
@@ -55,14 +54,13 @@
     \begin{columns}
         \begin{column}{0.5\textwidth}
             \begin{enumerate}
-                \item Extraímos a maior componente conexa do grafo providenciado.
+                \item Extraímos a maior componente conexa $G$ do grafo providenciado.
                 \pause
-                \item Escolhemos, convenientemente, 10 vértices do grafo e valores, entre 1 e 10, para cada um destes.
+                \item Escolhemos, convenientemente, 10 vértices de $G$ e valores, entre 1 e 10, para cada um destes.
                 \pause
-                \item Construímos a matriz laplaciana $L$ e a matriz de penalidades $P$, com $\alpha = 10^{-7}$, assim como o vetor $b$, como instruído.
+                \item Construímos a matriz laplaciana $L$ e a matriz de penalidades $P$, com $\alpha = 10^{7}$, assim como o vetor $b$, como instruído.
                 \pause
                 \item Resolvemos o sistema  $\left( L + P \right)x = Pb $ por meio de diferentes métodos e comparamos os resultados obtidos.
-
             \end{enumerate}
         \end{column}
         \begin{column}{0.5\textwidth}
@@ -79,12 +77,29 @@
         \includegraphics[width=\textwidth]{exactsolution.jpeg}
     \end{frame}
 
-    \begin{frame}{Decomposição LU}
-        
-    \end{frame}
+    \begin{frame}{Métodos diretos}
+        \pause
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \textbf{Decomposição LU}
+                \pause
+                    \begin{enumerate}
+                        \item Levou 792.882385 segundos (aproximadamente 13 minutos).
+                    \end{enumerate}
+            \end{column}
 
-    \begin{frame}{Cholesky}
-        
+            \begin{column}{0.5\textwidth}
+                \pause
+                \textbf{Cholesky}
+                \pause
+                    \begin{enumerate}
+                        \item Como $G$ é um grafo conexo, sabemos que $L$ é simétrica semidefinida positiva.
+                        \pause
+                        \item Levou 298.476189 segundos (aproximadamente 5 minutos).
+                    \end{enumerate}
+                
+            \end{column}
+        \end{columns}
     \end{frame}
 
     \begin{frame}{Para os métodos iterativos...}
@@ -122,6 +137,7 @@
                \end{enumerate} 
             \end{column}
             \begin{column}{0.5\textwidth}
+                \pause
                 \centering
                 \includegraphics[width=\textwidth]{GJinterpol.jpeg}
             \end{column}
@@ -167,6 +183,24 @@
     \end{frame}
 
     \begin{frame}{Interpretando os resultados}
+        \pause
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \textbf{Métodos diretos} 
+                \pause
 
+                    Apesar de ambos terem fornecido a resposta exata, o método de Cholesky o fez num tempo consideravelmente menor.
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \pause
+                \textbf{Métodos iterativos}
+                \pause
+
+                Os métodos de Gauss-Jacobi e de Gauss-Seidel se provaram ineficazes para solucionar o sistema de forma aceitável, enquanto que o método dos gradientes conjugados foi extremamente eficiente.
+            \end{column}
+        \end{columns}
+        \pause
+        \vspace{10mm}
+        Neste caso, convém optar pelo método dos gradientes conjugados!
     \end{frame}
 \end{document}
