@@ -1,0 +1,108 @@
+\documentclass{article} % change to article if necessary 
+\usepackage[brazilian]{babel}
+\usepackage{graphicx, txfonts} % Required for inserting images
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm} \usepackage{mathtools} \usepackage{lmodern} \usepackage{tikz}
+\usepackage{cancel}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[shortlabels]{enumitem}
+\newcommand\myalign[1]{\centerline{$\displaystyle#1$}}
+\usepackage{tcolorbox} \tcbuselibrary{theorems}
+\newcommand{\heart}
+{\ensuremath\heartsuit}
+\newcommand{\mdc}{\mathrm{mdc}}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\gr}{Gr}
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\filledheart}{\ensuremath\varheartsuit}
+
+\title{Relatório – Sobre diferentes métodos de resolução de sistemas lineares para computar os índices de criminalidade sobre um grafo de Manhattan}
+\author
+{
+  Vinícius Girão de Castro | 15491730 \\
+  Natália Carvalho | 15497232 \\
+  Larissa Rocha Gonçalves| 15522431\\
+  Fabio Araujo | 16311045 \\
+}
+\date{}
+
+\pdfsuppresswarningpagegroup=1
+
+%\newtheorem{theorem}{Teorema}[section]
+%\newtheorem{prop}{Proposição}[theorem]
+\newtheorem{definition}{Definição}[section]
+\newtheorem{exer}{}[section]
+\newtheorem{prop}{Proposição}[section]
+\newtheorem{cor}{Corolário}[prop]
+\newtheorem{exemplo}{Exemplo}[section]
+\newtheorem{resultado}{Resultado}[section]
+\newtcbtheorem[number within=section]{theorem}{Teorema}%
+{colback=red!5,colframe=red!35!black,fonttitle=\bfseries}{th}
+\newtcbtheorem[number within=section]{propp}{Proposição}%
+{colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{pr}
+\newtcbtheorem[number within=section]{lema}{Lema}%
+{colback=yellow!5,colframe=yellow!35!black,fonttitle=\bfseries}{lm}
+
+\theoremstyle{definition}
+\newenvironment{dem}{\paragraph{\textit{Dem.:}}}{\hfill$\square$}
+
+\begin{document}
+\maketitle
+    \section*{O que fizemos?}
+        \begin{enumerate}
+            \item Extraímos a maior componente conexa $G$ do grafo providenciado.
+            \item Escolhemos, convenientemente, 10 vértices de $G$ e valores, entre 1 e 10, para cada um destes.
+            \item Construímos a matriz laplaciana $L$ e a matriz de penalidades $P$, com $\alpha = 10^{7}$, assim como o vetor $b$, como instruído.
+            \item Resolvemos o sistema  $\left( L + P \right)x = Pb $ por meio de diferentes métodos e comparamos os resultados obtidos.
+        \end{enumerate}
+    \section*{Para os métodos iterativos...    }
+        \begin{itemize}
+            \item Utilizamos uma tolerância de 1e-6.
+            \item Empregamos a norma $\ell^2$ (euclidiana para vetores reais) para verificar a qualidade da convergência de cada método. Além disso, também calculamos a norma relativa da seguinte forma:
+                $$\ell^2_{rel}(x) = \frac{\|x - y\|}{\|y\| + \epsilon }, \text{ com } \epsilon > 0,$$
+                onde $y$ é a solução exata.
+        \end{itemize}
+    \section*{Métodos utilizados}
+        \subsection*{Decomposição LU}
+            \begin{itemize}
+                \item Levou 792.882385 segundos (aproximadamente 13 minutos).
+            \end{itemize}
+        \subsection*{Decomposição de Cholesky}
+            \begin{itemize}
+                \item Como $G$ é um grafo conexo, sabemos que $L$ é simétrica semidefinida positiva.
+                \item Levou 298.476189 segundos (aproximadamente 5 minutos).
+            \end{itemize}
+        \subsection*{Método de Jacobi}
+            \begin{itemize}
+                \item Convergiu com 1000 iterações e em 0.545334 segundo.
+                \item Este método foi o que mais divergiu do resultado exato, com uma norma $\ell^2$ da diferença em relação ao resultado exato de 3.768525e+02 e uma norma relativa de 8.318139e-01, o que justifica o mapa insatisfatório.
+            \end{itemize}
+        \subsection*{Gauss-Seidel}
+            \begin{itemize}
+                \item Convergiu com 1000 iterações e em 0.368160 segundo.
+                \item Apesar de ter se aproximado mais da solução exata do que o método de Jacobi, com uma norma $\ell^2$ da diferença de 3.274648e+02 e uma norma relativa de 7.228020e-01, o método de Gauss-Seidel ainda resulta numa representação longe da ideal.
+            \end{itemize}
+
+        \subsection*{Gradientes conjugados (CG)}
+            \begin{itemize}
+                \item A convergência do método dos gradientes conjugados é garantida pelo fato de que a matriz  $L + P$ é simétrica definida positiva.
+                \item  O método CG convergiu com 1101 iterações e em 0.1703 segundo.
+                \item Convergiu eficientemente, com uma norma $\mathcal{\ell}^2$ da diferença de 3.172346e-05 e uma norma relativa de 7.002212e-08.
+            \end{itemize}
+
+    \section*{Interpretando os resultados}
+        \begin{itemize}
+            \item \textbf{Métodos diretos:}
+
+                Apesar de ambos terem fornecido a resposta exata, o método de Cholesky o fez num tempo consideravelmente menor.
+            \item \textbf{Métodos iterativos:}
+                
+                Os métodos de Gauss-Jacobi e de Gauss-Seidel se provaram ineficazes para solucionar o sistema de forma aceitável, enquanto que o método dos gradientes conjugados foi extremamente eficiente.
+        \end{itemize}
+
+            Neste caso, convém optar pelo método dos gradientes conjugados!
+            \end{document}
